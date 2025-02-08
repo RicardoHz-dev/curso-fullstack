@@ -6,19 +6,31 @@
   <title>Gestión de Tareas Asincrónicas</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <h1>Gestión de Tareas</h1>
-
   <div class="actions">
-    <button id="cargarDatos">Cargar Tareas</button>
-    <form id="formAgregar">
-      <input type="text" id="nuevaTarea" placeholder="Nueva tarea" required />
-      <button type="submit">Agregar Tarea</button>
+    <form id="formNombre">
+      <input type="text" id="nuevaTarea" placeholder="Nombre de la tarea" required/>
+      <button id="btnAgregar">Agregar Tarea</button>
+      <button id="btnBuscar" style="background-color: gold;">Buscar Tarea</button>
     </form>
-    <input type="text" id="buscarTarea" placeholder="Buscar tarea..." />
+
+    <form id="formId">
+      <input type="text" id="tareaId" placeholder="ID de la tarea"/>
+      <button id="btnEditar" style="background-color: green;">Editar Tarea</button>
+      <button id="btnEliminar" style="background-color: orange">Eliminar Tarea</button>
+    </form>
+    
+    <br>
+    <button id="cargarDatos" style="background-color: grey;">Cargar Tareas</button>
+
+    <button id="btnMostrar" style="background-color: black;">Mostrar Tareas</button>
+    <button id="btnTodo" style="background-color: red;">Eliminar Todo</button>
   </div>
 
-  <ul id="listaDatos"></ul>
+  <ul id="listaDatos">
+  </ul>
 
   <script src="script.js"></script>
 </body>
