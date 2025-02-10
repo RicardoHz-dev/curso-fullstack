@@ -1,4 +1,4 @@
-import { calcularDescuento } from './Modulos/calculos.js';
+import { calcularDescuento, agregarIgv } from './Modulos/calculos.js';
 import { darFormato } from './Modulos/formato.js';
 
 
@@ -9,18 +9,24 @@ const activarCalculadora = (e) => {
     let descuento = document.getElementById('descuento'); 
     let moneda = document.getElementById('moneda');
 
-    console.log(precio);
-    console.log(descuento);
-    console.log(moneda)
+    console.log(precio.value);
+    console.log(descuento.value);
+    console.log(moneda.value)
 
     let precioFinal = calcularDescuento(precio.value, descuento.value);
+    let precioIgv = agregarIgv(precioFinal);
+
+    console.log(`Precio Final: ${precioFinal}`);
+    console.log(`Precio Final (IGV): ${precioIgv}`);
 
     let rpta = document.getElementById('resultado');
-    rpta.innerText = `Precio final: ${darFormato(precioFinal, moneda.value)}`;
+    let rptaIgv = document.getElementById('igv');
+
+    rpta.innerText = `Precio final : ${darFormato(precioFinal, moneda.value)}`;
+    rptaIgv.innerText = `Precio final (IGV): ${darFormato(precioIgv, moneda.value)}`;
 
     precio.value = '';
     descuento.value = '';
-    moneda = '';
 };
 
 document.getElementById('calcular').addEventListener('click', activarCalculadora);

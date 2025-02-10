@@ -20,7 +20,7 @@
 
         <label for="moneda">Seleccionar Moneda:</label>
         <select id="moneda">
-          <option value="PEN">PEN</option>
+          <option value="PEN">PER</option>
           <option value="USD">USD</option>
           <option value="EUR">EUR</option>
         </select>
@@ -28,11 +28,13 @@
         <button id="calcular">Calcular</button>
 
         <p class="resultado" id="resultado">Precio final: </p>
+        <p class="resultado" id="igv">Precio final (IGV): </p>
     </div>
 
     <script type="module" src="main.js"></script>
-    <script src="https://unpkg.com/currency.js@~2.0.0/dist/currency.min.js"></script>
 
+    <!-- LIBRERIA CURRENCY -->
+    <script src="https://unpkg.com/currency.js@~2.0.0/dist/currency.min.js"></script> 
 
 </body>
 </html>
